@@ -1,0 +1,37 @@
+﻿lubuntu@lubuntu:~$ ps -aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.2  0.3  31696  6592 ?        Ss   08:36   0:15 /sbin/init persistent noprompt ignore_uuid splash ---
+root         2  0.0  0.0      0     0 ?        S    08:36   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   08:36   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   08:36   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   08:36   0:00 [kworker/0:0H-kblockd]
+root         8  0.0  0.0      0     0 ?        I<   08:36   0:00 [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    08:36   0:01 [ksoftirqd/0]
+root        10  0.0  0.0      0     0 ?        I    08:36   0:03 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        I    08:36   0:00 [rcu_bh]
+
+lubuntu@lubuntu:~$ gnome-calculator &
+[1] 5664
+
+lubuntu@lubuntu:~$ ps -ef|grep calculator
+lubuntu   5664  4864  0 11:04 pts/0    00:00:01 gnome-calculator
+lubuntu   5683  4864  0 11:09 pts/0    00:00:00 grep --color=auto calculator
+
+lubuntu@lubuntu:~$  cat /proc/5664/status
+Name:   gnome-calculato
+Umask:  0002
+State:  S (sleeping)
+Tgid:   5664
+Ngid:   0
+Pid:    5664
+PPid:   4864
+TracerPid:      0
+Uid:    999     999     999     999
+Gid:    999     999     999     999
+
+lubuntu@lubuntu:~$ kill -stop 5664
+lubuntu@lubuntu:~$ kill -cont 5664
+lubuntu@lubuntu:~$ kill -kill 5664
+lubuntu@lubuntu:~$ cat /proc/5664/status
+cat: /proc/5664/status: No such file or directory
+
