@@ -1,0 +1,32 @@
+﻿lubuntu@lubuntu:~$ cat /proc/sched_debug | grep systemd
+ S        systemd     1       435.289098      3184   120         0.000000     14820.981299         0.000000 /autogroup-4
+ S  systemd-udevd  1310      1914.811264      3519   120         0.000000      6487.318188         0.000000 /autogroup-18
+ Ssystemd-timesyn  1345        21.750290        82   120         0.000000       104.809863         0.000000 /autogroup-29
+ Ssystemd-resolve  1347       162.892199       852   120         0.000000       490.418360         0.000000 /autogroup-31
+ S systemd-logind  1358        42.576383       945   120         0.000000       130.279664         0.000000 /autogroup-38
+ Ssystemd-journal  1300        71.157003       801   119         0.000000       546.980329         0.000000 /autogroup-12
+ S        systemd  1735        75.998092       103   120         0.000000       201.389159         0.000000 /autogroup-74
+lubuntu@lubuntu:~$ cat /proc/1735/sched
+systemd (1735, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :         58993.837030
+se.vruntime                                  :            75.998092
+se.sum_exec_runtime                          :           201.389159
+se.nr_migrations                             :                   13
+nr_switches                                  :                  103
+nr_voluntary_switches                        :                   50
+nr_involuntary_switches                      :                   53
+se.load.weight                               :                 1024
+se.runnable_weight                           :                 1024
+se.avg.load_sum                              :                 4238
+se.avg.runnable_load_sum                     :                 4238
+se.avg.util_sum                              :              4291638
+se.avg.load_avg                              :                   87
+se.avg.runnable_load_avg                     :                   87
+se.avg.util_avg                              :                   86
+se.avg.last_update_time                      :          58993836032
+se.avg.util_est.ewma                         :                  126
+se.avg.util_est.enqueued                     :                   87
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  531
