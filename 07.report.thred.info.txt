@@ -1,0 +1,6 @@
+﻿lubuntu@lubuntu:~$ ps -A
+2254 ?        00:03:59 firefox
+
+lubuntu@lubuntu:~$ ps -o nlwp 2254
+NLWP
+  67
